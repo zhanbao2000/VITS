@@ -14,7 +14,7 @@ defaults:
 
 jobs:
 
-  Ubuntu:    
+  win:    
     runs-on: 'windows-latest'
     steps:
     - uses: actions/checkout@v2
@@ -22,7 +22,8 @@ jobs:
       with:
         python-version: '3.10'
     - run: pip install twine wheel cython numpy
-    - run: python ./monotonic_align/setup.py build_ext --inplace
+    - working-directory: ./monotonic_align
+      run: python setup.py build_ext --inplace
     - uses: actions/upload-artifact@v2
       with:
         path: ./monotonic_align/*
