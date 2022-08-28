@@ -3,10 +3,10 @@ name: Python
 on:
   push:
     branches:
-    - master
+    - main
   pull_request:
     branches:
-    - master
+    - main
 
 defaults:
   run:
@@ -15,7 +15,7 @@ defaults:
 jobs:
 
   Ubuntu:    
-    runs-on: 'ubuntu-latest'
+    runs-on: 'windows-latest'
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
