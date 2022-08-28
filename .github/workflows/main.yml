@@ -22,9 +22,7 @@ jobs:
       with:
         python-version: '3.10'
     - run: pip install twine wheel cython numpy
-    - run:
-        cd monotonic_align |
-        python setup.py build_ext --inplace
+    - run: python monotonic_align/setup.py build_ext --inplace
     - uses: actions/upload-artifact@v2
       with:
         path: monotonic_align/*
